@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SA46Team05BESNETProject.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Availabilities">
+          <Key>
+            <PropertyRef Name="FacilityID" />
+          </Key>
+          <Property Name="FacilityID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Slot1" Type="int" Nullable="false" />
+          <Property Name="Slot2" Type="int" />
+          <Property Name="Slot3" Type="int" />
+          <Property Name="Slot4" Type="int" />
+          <Property Name="Slot5" Type="int" />
+          <Property Name="Slot6" Type="int" />
+          <Property Name="Slot7" Type="int" />
+          <Property Name="Slot8" Type="int" />
+        </EntityType>
+        <EntityType Name="Facilities">
+          <Key>
+            <PropertyRef Name="FacilityID" />
+          </Key>
+          <Property Name="FacilityID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Activity" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Price" Type="float" />
+        </EntityType>
+        <EntityType Name="Members">
+          <Key>
+            <PropertyRef Name="NRIC" />
+          </Key>
+          <Property Name="NRIC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MemberName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="255" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="255" />
+          <Property Name="Age" Type="float" />
+        </EntityType>
+        <EntityType Name="Transactions">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="int" Nullable="false" />
+          <Property Name="NRIC" Type="varchar" MaxLength="50" />
+          <Property Name="FacilityID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BookingDate" Type="datetime" />
+          <Property Name="Slot" Type="nvarchar" MaxLength="255" />
+          <Property Name="Timeslot" Type="nvarchar" MaxLength="255" />
+          <Property Name="Price" Type="float" />
+        </EntityType>
+        <Association Name="FK_Availabilities_Facilities">
+          <End Role="Facilities" Type="Self.Facilities" Multiplicity="1" />
+          <End Role="Availabilities" Type="Self.Availabilities" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Facilities">
+              <PropertyRef Name="FacilityID" />
+            </Principal>
+            <Dependent Role="Availabilities">
+              <PropertyRef Name="FacilityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transactions_Facilities">
+          <End Role="Facilities" Type="Self.Facilities" Multiplicity="1" />
+          <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilities">
+              <PropertyRef Name="FacilityID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="FacilityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transactions_Members">
+          <End Role="Members" Type="Self.Members" Multiplicity="0..1" />
+          <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Members">
+              <PropertyRef Name="NRIC" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="NRIC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SA46Team05BESNETProjectStoreContainer">
+          <EntitySet Name="Availabilities" EntityType="Self.Availabilities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facilities" EntityType="Self.Facilities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Members" EntityType="Self.Members" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Availabilities_Facilities" Association="Self.FK_Availabilities_Facilities">
+            <End Role="Facilities" EntitySet="Facilities" />
+            <End Role="Availabilities" EntitySet="Availabilities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transactions_Facilities" Association="Self.FK_Transactions_Facilities">
+            <End Role="Facilities" EntitySet="Facilities" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transactions_Members" Association="Self.FK_Transactions_Members">
+            <End Role="Members" EntitySet="Members" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SA46Team05BESNETProject" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Availability">
+          <Key>
+            <PropertyRef Name="FacilityID" />
+          </Key>
+          <Property Name="FacilityID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Slot1" Type="Int32" Nullable="false" />
+          <Property Name="Slot2" Type="Int32" />
+          <Property Name="Slot3" Type="Int32" />
+          <Property Name="Slot4" Type="Int32" />
+          <Property Name="Slot5" Type="Int32" />
+          <Property Name="Slot6" Type="Int32" />
+          <Property Name="Slot7" Type="Int32" />
+          <Property Name="Slot8" Type="Int32" />
+          <NavigationProperty Name="Facility" Relationship="Self.FK_Availabilities_Facilities" FromRole="Availabilities" ToRole="Facilities" />
+        </EntityType>
+        <EntityType Name="Facility">
+          <Key>
+            <PropertyRef Name="FacilityID" />
+          </Key>
+          <Property Name="FacilityID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Activity" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Double" />
+          <NavigationProperty Name="Availability" Relationship="Self.FK_Availabilities_Facilities" FromRole="Facilities" ToRole="Availabilities" />
+          <NavigationProperty Name="Transactions" Relationship="Self.FK_Transactions_Facilities" FromRole="Facilities" ToRole="Transactions" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="NRIC" />
+          </Key>
+          <Property Name="NRIC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MemberName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Double" />
+          <NavigationProperty Name="Transactions" Relationship="Self.FK_Transactions_Members" FromRole="Members" ToRole="Transactions" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="Int32" Nullable="false" />
+          <Property Name="NRIC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FacilityID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BookingDate" Type="DateTime" Precision="3" />
+          <Property Name="Slot" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Timeslot" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Double" />
+          <NavigationProperty Name="Facility" Relationship="Self.FK_Transactions_Facilities" FromRole="Transactions" ToRole="Facilities" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_Transactions_Members" FromRole="Transactions" ToRole="Members" />
+        </EntityType>
+        <Association Name="FK_Availabilities_Facilities">
+          <End Role="Facilities" Type="Self.Facility" Multiplicity="1" />
+          <End Role="Availabilities" Type="Self.Availability" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Facilities">
+              <PropertyRef Name="FacilityID" />
+            </Principal>
+            <Dependent Role="Availabilities">
+              <PropertyRef Name="FacilityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transactions_Facilities">
+          <End Role="Facilities" Type="Self.Facility" Multiplicity="1" />
+          <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilities">
+              <PropertyRef Name="FacilityID" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="FacilityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transactions_Members">
+          <End Role="Members" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Members">
+              <PropertyRef Name="NRIC" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="NRIC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SA46Team05BESNTETProjectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Availabilities" EntityType="Self.Availability" />
+          <EntitySet Name="Facilities" EntityType="Self.Facility" />
+          <EntitySet Name="Members" EntityType="Self.Member" />
+          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+          <AssociationSet Name="FK_Availabilities_Facilities" Association="Self.FK_Availabilities_Facilities">
+            <End Role="Facilities" EntitySet="Facilities" />
+            <End Role="Availabilities" EntitySet="Availabilities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transactions_Facilities" Association="Self.FK_Transactions_Facilities">
+            <End Role="Facilities" EntitySet="Facilities" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transactions_Members" Association="Self.FK_Transactions_Members">
+            <End Role="Members" EntitySet="Members" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SA46Team05BESNETProjectStoreContainer" CdmEntityContainer="SA46Team05BESNTETProjectEntities">
+          <EntitySetMapping Name="Availabilities">
+            <EntityTypeMapping TypeName="SA46Team05BESNETProject.Availability">
+              <MappingFragment StoreEntitySet="Availabilities">
+                <ScalarProperty Name="FacilityID" ColumnName="FacilityID" />
+                <ScalarProperty Name="Slot1" ColumnName="Slot1" />
+                <ScalarProperty Name="Slot2" ColumnName="Slot2" />
+                <ScalarProperty Name="Slot3" ColumnName="Slot3" />
+                <ScalarProperty Name="Slot4" ColumnName="Slot4" />
+                <ScalarProperty Name="Slot5" ColumnName="Slot5" />
+                <ScalarProperty Name="Slot6" ColumnName="Slot6" />
+                <ScalarProperty Name="Slot7" ColumnName="Slot7" />
+                <ScalarProperty Name="Slot8" ColumnName="Slot8" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facilities">
+            <EntityTypeMapping TypeName="SA46Team05BESNETProject.Facility">
+              <MappingFragment StoreEntitySet="Facilities">
+                <ScalarProperty Name="FacilityID" ColumnName="FacilityID" />
+                <ScalarProperty Name="Activity" ColumnName="Activity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="SA46Team05BESNETProject.Member">
+              <MappingFragment StoreEntitySet="Members">
+                <ScalarProperty Name="NRIC" ColumnName="NRIC" />
+                <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="SA46Team05BESNETProject.Transaction">
+              <MappingFragment StoreEntitySet="Transactions">
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="NRIC" ColumnName="NRIC" />
+                <ScalarProperty Name="FacilityID" ColumnName="FacilityID" />
+                <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+                <ScalarProperty Name="Slot" ColumnName="Slot" />
+                <ScalarProperty Name="Timeslot" ColumnName="Timeslot" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
