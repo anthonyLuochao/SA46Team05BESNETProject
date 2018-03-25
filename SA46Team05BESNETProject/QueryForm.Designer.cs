@@ -30,22 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.SearchByGroupBox = new System.Windows.Forms.GroupBox();
+            this.displayTableButton = new System.Windows.Forms.Button();
+            this.TimeSlotComboBox = new System.Windows.Forms.ComboBox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.ActivityComboBox = new System.Windows.Forms.ComboBox();
             this.TimeSlotLabel = new System.Windows.Forms.Label();
             this.ActivityLabel = new System.Windows.Forms.Label();
             this.FacilitiesDataGridView = new System.Windows.Forms.DataGridView();
-            this.BookButton = new System.Windows.Forms.Button();
-            this.TimeSlotComboBox = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.updateButton = new System.Windows.Forms.Button();
             this.sA46Team05B_ESNTET_ProjectDataSet = new SA46Team05BESNETProject.SA46Team05B_ESNTET_ProjectDataSet();
             this.availabilitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.availabilitiesTableAdapter = new SA46Team05BESNETProject.SA46Team05B_ESNTET_ProjectDataSetTableAdapters.AvailabilitiesTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.displayTableButton = new System.Windows.Forms.Button();
             this.SearchByGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FacilitiesDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sA46Team05B_ESNTET_ProjectDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.availabilitiesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +65,36 @@
             this.SearchByGroupBox.TabStop = false;
             this.SearchByGroupBox.Text = "Search By";
             this.SearchByGroupBox.Enter += new System.EventHandler(this.SearchByGroupBox_Enter);
+            // 
+            // displayTableButton
+            // 
+            this.displayTableButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.displayTableButton.Location = new System.Drawing.Point(222, 89);
+            this.displayTableButton.Name = "displayTableButton";
+            this.displayTableButton.Size = new System.Drawing.Size(96, 23);
+            this.displayTableButton.TabIndex = 6;
+            this.displayTableButton.Text = "&DisplayTable";
+            this.displayTableButton.UseVisualStyleBackColor = true;
+            this.displayTableButton.Click += new System.EventHandler(this.displayTableButton_Click);
+            // 
+            // TimeSlotComboBox
+            // 
+            this.TimeSlotComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TimeSlotComboBox.FormattingEnabled = true;
+            this.TimeSlotComboBox.Items.AddRange(new object[] {
+            "",
+            "09:00-10:00",
+            "10:00-11:00",
+            "11:00-12:00",
+            "12:00-13:00",
+            "13:00-14:00",
+            "14:00-15:00",
+            "15:00-16:00",
+            "16:00-17:00"});
+            this.TimeSlotComboBox.Location = new System.Drawing.Point(135, 55);
+            this.TimeSlotComboBox.Name = "TimeSlotComboBox";
+            this.TimeSlotComboBox.Size = new System.Drawing.Size(146, 27);
+            this.TimeSlotComboBox.TabIndex = 5;
             // 
             // SearchButton
             // 
@@ -133,42 +160,15 @@
             this.FacilitiesDataGridView.TabIndex = 1;
             this.FacilitiesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FacilitiesDataGridView_CellContentClick);
             // 
-            // BookButton
+            // updateButton
             // 
-            this.BookButton.Location = new System.Drawing.Point(471, 305);
-            this.BookButton.Name = "BookButton";
-            this.BookButton.Size = new System.Drawing.Size(75, 23);
-            this.BookButton.TabIndex = 2;
-            this.BookButton.Text = "Update";
-            this.BookButton.UseVisualStyleBackColor = true;
-            this.BookButton.Click += new System.EventHandler(this.BookButton_Click);
-            // 
-            // TimeSlotComboBox
-            // 
-            this.TimeSlotComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TimeSlotComboBox.FormattingEnabled = true;
-            this.TimeSlotComboBox.Items.AddRange(new object[] {
-            "",
-            "09:00-10:00",
-            "10:00-11:00",
-            "11:00-12:00",
-            "12:00-13:00",
-            "13:00-14:00",
-            "14:00-15:00",
-            "15:00-16:00",
-            "16:00-17:00"});
-            this.TimeSlotComboBox.Location = new System.Drawing.Point(135, 55);
-            this.TimeSlotComboBox.Name = "TimeSlotComboBox";
-            this.TimeSlotComboBox.Size = new System.Drawing.Size(146, 27);
-            this.TimeSlotComboBox.TabIndex = 5;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(495, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(362, 236);
-            this.dataGridView1.TabIndex = 3;
+            this.updateButton.Location = new System.Drawing.Point(224, 333);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(75, 23);
+            this.updateButton.TabIndex = 2;
+            this.updateButton.Text = "&Update";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // sA46Team05B_ESNTET_ProjectDataSet
             // 
@@ -184,35 +184,13 @@
             // 
             this.availabilitiesTableAdapter.ClearBeforeFill = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(239, 348);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
-            // 
-            // displayTableButton
-            // 
-            this.displayTableButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayTableButton.Location = new System.Drawing.Point(222, 89);
-            this.displayTableButton.Name = "displayTableButton";
-            this.displayTableButton.Size = new System.Drawing.Size(96, 23);
-            this.displayTableButton.TabIndex = 6;
-            this.displayTableButton.Text = "DisplayTable";
-            this.displayTableButton.UseVisualStyleBackColor = true;
-            this.displayTableButton.Click += new System.EventHandler(this.displayTableButton_Click);
-            // 
             // QueryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(869, 408);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.BookButton);
+            this.ClientSize = new System.Drawing.Size(553, 408);
+            this.Controls.Add(this.updateButton);
             this.Controls.Add(this.FacilitiesDataGridView);
             this.Controls.Add(this.SearchByGroupBox);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -223,11 +201,9 @@
             this.SearchByGroupBox.ResumeLayout(false);
             this.SearchByGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FacilitiesDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sA46Team05B_ESNTET_ProjectDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.availabilitiesBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -239,13 +215,11 @@
         private System.Windows.Forms.Label ActivityLabel;
         private System.Windows.Forms.ComboBox ActivityComboBox;
         private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.Button BookButton;
+        private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.ComboBox TimeSlotComboBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private SA46Team05B_ESNTET_ProjectDataSet sA46Team05B_ESNTET_ProjectDataSet;
         private System.Windows.Forms.BindingSource availabilitiesBindingSource;
         private SA46Team05B_ESNTET_ProjectDataSetTableAdapters.AvailabilitiesTableAdapter availabilitiesTableAdapter;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button displayTableButton;
     }
 }

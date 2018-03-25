@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Author of this code: Luo Chao
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,9 +34,10 @@ namespace SA46Team05BESNETProject
             var today = DateTime.Now;
             var tomorrow = today.AddDays(+1);
             TomorrowDateLabel.Text = tomorrow.ToString();
+            this.KeyPreview = true;
         }
 
-        private void CheckAvailabilityButton_Click(object sender, EventArgs e)
+        private void DisplayFacilityButton_Click(object sender, EventArgs e)
         {
             string updateFacility = "select * from Facilities";
             con = new SqlConnection();
@@ -54,6 +56,18 @@ namespace SA46Team05BESNETProject
         {
             cmb = new SqlCommandBuilder(adap);
             adap.Update(ds, "1");
+        }
+
+        private void SportsFacilitiesMaintenanceForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Control ==true &&e.KeyCode ==Keys.D)
+            {
+                DisplayFacilityButton.PerformClick();
+            }
+            if(e.Control ==true&&e.KeyCode ==Keys.U)
+            {
+                UpdateAvailiabilityButton.PerformClick();
+            }
         }
     }
 }

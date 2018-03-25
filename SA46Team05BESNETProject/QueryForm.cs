@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Author of this code:Luo Chao
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -304,367 +305,15 @@ namespace SA46Team05BESNETProject
                     cm.CommandText = onlySlot8;
                 }
 
-                //if (ActivityComboBox.Text.Trim() == "Tennis" && TimeSlotComboBox.Text.Trim() == "")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              select new { x.FacilityID, x.Slot1, x.Slot2, x.Slot3, x.Slot4, x.Slot5, x.Slot6, x.Slot7, x.Slot8 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-
-                //else if (ActivityComboBox.Text.Trim() == "Table Tennis" && TimeSlotComboBox.Text.Trim() == "")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              select new { x.FacilityID, x.Slot1, x.Slot2, x.Slot3, x.Slot4, x.Slot5, x.Slot6, x.Slot7, x.Slot8 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Badminton" && TimeSlotComboBox.Text.Trim() == "")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot1, x.Slot2, x.Slot3, x.Slot4, x.Slot5, x.Slot6, x.Slot7, x.Slot8 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "BasketBall" && TimeSlotComboBox.Text.Trim() == "")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              select new { x.FacilityID, x.Slot1, x.Slot2, x.Slot3, x.Slot4, x.Slot5, x.Slot6, x.Slot7, x.Slot8 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Tennis" && TimeSlotComboBox.Text.Trim() == "09:00-10:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              select new { x.FacilityID, x.Slot1};
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Tennis" && TimeSlotComboBox.Text.Trim() == "10:00-11:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              select new { x.FacilityID, x.Slot2};
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Tennis" && TimeSlotComboBox.Text.Trim() == "11:00-12:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              select new { x.FacilityID, x.Slot3 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Tennis" && TimeSlotComboBox.Text.Trim() == "12:00-13:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              select new { x.FacilityID, x.Slot4 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Tennis" && TimeSlotComboBox.Text.Trim() == "13:00-14:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              select new { x.FacilityID, x.Slot5 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Tennis" && TimeSlotComboBox.Text.Trim() == "14:00-15:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              select new { x.FacilityID, x.Slot6 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Tennis" && TimeSlotComboBox.Text.Trim() == "15:00-16:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              select new { x.FacilityID, x.Slot7 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Tennis" && TimeSlotComboBox.Text.Trim() == "16:00-17:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              select new { x.FacilityID, x.Slot8 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-
-                //else if (ActivityComboBox.Text.Trim() == "Table Tennis" && TimeSlotComboBox.Text.Trim() == "09:00-10:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              select new { x.FacilityID, x.Slot1 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Table Tennis" && TimeSlotComboBox.Text.Trim() == "10:00-11:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              select new { x.FacilityID, x.Slot2 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Table Tennis" && TimeSlotComboBox.Text.Trim() == "11:00-12:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              select new { x.FacilityID, x.Slot3 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Table Tennis" && TimeSlotComboBox.Text.Trim() == "12:00-13:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              select new { x.FacilityID, x.Slot4 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Table Tennis" && TimeSlotComboBox.Text.Trim() == "13:00-14:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              select new { x.FacilityID, x.Slot5 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Table Tennis" && TimeSlotComboBox.Text.Trim() == "14:00-15:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              select new { x.FacilityID, x.Slot6 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Table Tennis" && TimeSlotComboBox.Text.Trim() == "15:00-16:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              select new { x.FacilityID, x.Slot7 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Table Tennis" && TimeSlotComboBox.Text.Trim() == "16:00-17:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              select new { x.FacilityID, x.Slot8 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-
-                //else if (ActivityComboBox.Text.Trim() == "Badminton" && TimeSlotComboBox.Text.Trim() == "09:00-10:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot1 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Badminton" && TimeSlotComboBox.Text.Trim() == "10:00-11:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot2 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Badminton" && TimeSlotComboBox.Text.Trim() == "11:00-12:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot3 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Badminton" && TimeSlotComboBox.Text.Trim() == "12:00-13:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot4 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Badminton" && TimeSlotComboBox.Text.Trim() == "13:00-14:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot5 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Badminton" && TimeSlotComboBox.Text.Trim() == "14:00-15:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot6 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Badminton" && TimeSlotComboBox.Text.Trim() == "15:00-16:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot7};
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "Badminton" && TimeSlotComboBox.Text.Trim() == "16:00-17:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot8 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-
-                //else if (ActivityComboBox.Text.Trim() == "BasketBall" && TimeSlotComboBox.Text.Trim() == "09:00-10:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              select new { x.FacilityID, x.Slot1 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "BasketBall" && TimeSlotComboBox.Text.Trim() == "10:00-11:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              select new { x.FacilityID, x.Slot2 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "BasketBall" && TimeSlotComboBox.Text.Trim() == "11:00-12:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              select new { x.FacilityID, x.Slot3 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "BasketBall" && TimeSlotComboBox.Text.Trim() == "12:00-13:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              select new { x.FacilityID, x.Slot4 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "BasketBall" && TimeSlotComboBox.Text.Trim() == "13:00-14:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              select new { x.FacilityID, x.Slot5 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "BasketBall" && TimeSlotComboBox.Text.Trim() == "14:00-15:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              select new { x.FacilityID, x.Slot6 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "BasketBall" && TimeSlotComboBox.Text.Trim() == "15:00-16:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              select new { x.FacilityID, x.Slot7 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "BasketBall" && TimeSlotComboBox.Text.Trim() == "16:00-17:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              select new { x.FacilityID, x.Slot8 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-
-                //else if (ActivityComboBox.Text.Trim() == "" && TimeSlotComboBox.Text.Trim() == "09:00-10:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4" 
-                //              || x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              ||x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              ||x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot1 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "" && TimeSlotComboBox.Text.Trim() == "10:00-11:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              || x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              || x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              || x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot2 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "" && TimeSlotComboBox.Text.Trim() == "11:00-12:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              || x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              || x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              || x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot3 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "" && TimeSlotComboBox.Text.Trim() == "12:00-13:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              || x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              || x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              || x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot4 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "" && TimeSlotComboBox.Text.Trim() == "13:00-14:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              || x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              || x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              || x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot5 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "" && TimeSlotComboBox.Text.Trim() == "14:00-15:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              || x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              || x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              || x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot6 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "" && TimeSlotComboBox.Text.Trim() == "15:00-16:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              || x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              || x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              || x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot7 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
-                //else if (ActivityComboBox.Text.Trim() == "" && TimeSlotComboBox.Text.Trim() == "16:00-17:00")
-                //{
-                //    var qry = from x in context.Availabilities
-                //              where x.FacilityID == "BB-1" || x.FacilityID == "BB-2" || x.FacilityID == "BB-3" || x.FacilityID == "BB-4"
-                //              || x.FacilityID == "T-1" || x.FacilityID == "T-2" || x.FacilityID == "T-3" || x.FacilityID == "T-4"
-                //              || x.FacilityID == "TT-1" || x.FacilityID == "TT-2" || x.FacilityID == "TT-3" || x.FacilityID == "TT-4"
-                //              || x.FacilityID == "B-1" || x.FacilityID == "B-2" || x.FacilityID == "B-3" || x.FacilityID == "B-4"
-                //              select new { x.FacilityID, x.Slot8 };
-                //    FacilitiesDataGridView.DataSource = qry.ToList();
-                //}
                 cm.Connection = con;
                 con.Open();
                 adap = new SqlDataAdapter(cm);
                 ds = new DataSet();
                 adap.Fill(ds, "1");
-                dataGridView1.DataSource = ds.Tables[0];
+                FacilitiesDataGridView .DataSource = ds.Tables[0];
 
 
-                var today = DateTime.Now;
-                var tomorrow = today.AddDays(1);
-                label1.Text = today.ToString ();
-                // string testDate = "2018 - 01 - 01 00:00:00.000";
-                string TmrString = tomorrow.Year + "-" + tomorrow.Month + "-" + tomorrow.Day + " " + "00:00:00.000";
-
-
-
-
-                //if( ActivityComboBox.Text =="Tennis")
-                //{
-                //    var qry = context.Transactions.Where(x => x.BookingDate.ToString() == testDate).ToList();
-                //    List<Transaction> cLst = context.Transactions.Where(x => x.BookingDate.ToString() == testDate).ToList();
-                //    FacilitiesDataGridView.DataSource = cLst;
-                //}
-                //MessageBox.Show(TmrString .Trim());
+               
             }
             catch
             {
@@ -688,7 +337,7 @@ namespace SA46Team05BESNETProject
 
         }
 
-        private void BookButton_Click(object sender, EventArgs e)
+        private void updateButton_Click(object sender, EventArgs e)
         {
             cmb = new SqlCommandBuilder(adap);
             adap.Update(ds, "1");
@@ -705,7 +354,7 @@ namespace SA46Team05BESNETProject
             adap = new SqlDataAdapter(cm);
             ds = new DataSet();
             adap.Fill(ds, "1");
-            dataGridView1.DataSource = ds.Tables[0];
+            FacilitiesDataGridView .DataSource = ds.Tables[0];
             
         }
 
@@ -714,6 +363,14 @@ namespace SA46Team05BESNETProject
             if(e.Control ==true && e.KeyCode ==Keys.S )
             {
                 SearchButton.PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.U)
+            {
+                updateButton .PerformClick();
+            }
+            if (e.Control == true && e.KeyCode == Keys.D)
+            {
+                displayTableButton .PerformClick();
             }
         }
     }
