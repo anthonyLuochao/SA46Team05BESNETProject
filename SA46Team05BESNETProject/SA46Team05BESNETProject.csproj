@@ -54,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Availability.cs">
+      <DependentUpon>SA46Team05BESNETProject.tt</DependentUpon>
+    </Compile>
     <Compile Include="BookingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +68,12 @@
     </Compile>
     <Compile Include="CancelBookingForm.Designer.cs">
       <DependentUpon>CancelBookingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facility.cs">
+      <DependentUpon>SA46Team05BESNETProject.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member.cs">
+      <DependentUpon>SA46Team05BESNETProject.tt</DependentUpon>
     </Compile>
     <Compile Include="MemberMaintenanceForm.cs">
       <SubType>Form</SubType>
@@ -85,10 +94,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SA46Team05BESNETProject.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="SA46Team05BESNETProject.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SA46Team05BESNETProject.tt</DependentUpon>
+    </Compile>
     <Compile Include="SA46Team05BESNETProject.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SA46Team05BESNETProject.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SA46Team05B_ESNTET_ProjectDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SA46Team05B_ESNTET_ProjectDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SportsFacilitiesMaintenanceForm.cs">
       <SubType>Form</SubType>
@@ -101,6 +120,9 @@
     </Compile>
     <Compile Include="TemplateForm.Designer.cs">
       <DependentUpon>TemplateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction.cs">
+      <DependentUpon>SA46Team05BESNETProject.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BookingForm.resx">
       <DependentUpon>BookingForm.cs</DependentUpon>
@@ -146,6 +168,17 @@
     <None Include="SA46Team05BESNETProject.edmx.diagram">
       <DependentUpon>SA46Team05BESNETProject.edmx</DependentUpon>
     </None>
+    <None Include="SA46Team05B_ESNTET_ProjectDataSet.xsc">
+      <DependentUpon>SA46Team05B_ESNTET_ProjectDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SA46Team05B_ESNTET_ProjectDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SA46Team05B_ESNTET_ProjectDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SA46Team05B_ESNTET_ProjectDataSet.xss">
+      <DependentUpon>SA46Team05B_ESNTET_ProjectDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -154,6 +187,12 @@
     <Content Include="SA46Team05BESNETProject.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SA46Team05BESNETProject.Context.cs</LastGenOutput>
+      <DependentUpon>SA46Team05BESNETProject.edmx</DependentUpon>
+    </Content>
+    <Content Include="SA46Team05BESNETProject.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SA46Team05BESNETProject.edmx</DependentUpon>
+      <LastGenOutput>SA46Team05BESNETProject.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

@@ -16,7 +16,7 @@ namespace SA46Team05BESNETProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TemplateForm());
+            Application.Run(new SportsFacilitiesMaintenanceForm  ());
         }
     }
 }

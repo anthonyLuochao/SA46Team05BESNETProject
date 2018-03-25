@@ -21,5 +21,10 @@ namespace SA46Team05BESNETProject
         {
 
         }
+
+        private void FacilitiesGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
